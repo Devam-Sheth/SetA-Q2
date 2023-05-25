@@ -1,0 +1,137 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-1{
+    width: 200px;
+    height: 200px;
+    margin-right: 200px;
+    perspective: 5000px;
+}
+
+.box-2{
+    width: 200px;
+    height: 200px;
+    perspective: 5000px;
+}
+
+.card{
+    position: absolute;
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    padding-top: 12.5px;
+    background-color: aquamarine;
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+}
+
+.button{
+    position: absolute;
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    padding-top: 12.5px;
+    background-color: aquamarine;
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+}
+
+#face-1{
+    left: 70px;
+    transform: rotateY(80deg);
+}
+
+#face-2{
+    transform: rotateY(30deg);
+    transition: 0.1s;
+}
+
+#face-2:hover{
+    width: 157.5px;
+    transform: rotateY(0deg);
+}
+
+#front{
+    transition: 0.2s;
+    width: 150px;
+}
+
+#left{
+    bottom: -1px;
+    right: 70px;
+    transform: rotateY(85deg);
+    transition: 0.2s;
+    
+}
+
+#right{
+    bottom: -1px;
+    left: 65px;
+    transform: rotateY(85deg);
+    animation: open-right 1s ease infinite;
+    transition: 0.2s;
+    
+}
+
+#top{
+    width: 150px;
+    left: -5px;
+    transform: rotateX(87deg);
+    animation: open-top 1s ease infinite;
+    transition: 0.2s;
+    bottom: 25px;
+}
+
+#bottom{
+    width: 175px;
+    transform: rotateY(40deg);
+    transition: 0.2s;
+    left: -22.5px;
+    animation: open-bottom 1s ease infinite;
+    bottom: 1px; 
+    z-index: 0.75;
+}
+
+#front:hover {
+    transform: rotateY(0);
+}
+
+#front:hover > #left {
+    transform: rotateY(0) translateX(-85px);
+}
+
+#front:hover > #right {
+    transform: rotateY(0) translateX(90px);
+}
+
+#front:hover > #bottom {
+    left: 0;
+    transform: rotateY(0) translateY(57.5px);
+    width: 150px;
+}
+
+#front:hover > #top {
+    width: 150px;
+    left: -1px;
+    transform: rotateX(0) translateY(-27.5px);
+}
