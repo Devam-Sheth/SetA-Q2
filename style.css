@@ -30,10 +30,13 @@ body{
 }
 
 .box-2{
-    width: 200px;
-    height: 200px;
+    position: absolute;
+    width: 250px;
+    height: 250px;
     perspective: 5000px;
     transform-style: preserve-3d;
+    bottom: 0px;
+    left: 125px;
 }
 
 .card{
