@@ -10,6 +10,7 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    transform-style: preserve-3d;
 }
 
 .container{
@@ -32,6 +33,7 @@ body{
     width: 200px;
     height: 200px;
     perspective: 5000px;
+    transform-style: preserve-3d;
 }
 
 .card{
@@ -40,8 +42,8 @@ body{
     width: 150px;
     text-align: center;
     padding-top: 12.5px;
-    background-color: aquamarine;
-    border: 2px solid whitesmoke;
+    background-color: orangered;
+    border: 2px solid black;
     cursor: pointer;
 }
 
@@ -51,87 +53,96 @@ body{
     width: 150px;
     text-align: center;
     padding-top: 12.5px;
-    background-color: aquamarine;
-    border: 2px solid whitesmoke;
+    background-color: orangered;
+    border: 2px solid black;
     cursor: pointer;
 }
 
 #face-1{
-    left: 70px;
-    transform: rotateY(80deg);
+    left: 60px;
+    transform: rotateY(-82.5deg);
 }
 
 #face-2{
-    transform: rotateY(30deg);
+    left: 2px;
+    transform: rotateY(50deg);
     transition: 0.1s;
 }
 
-#face-2:hover{
-    width: 157.5px;
+.box-1:hover > #face-2{
+    width: 132.5px;
     transform: rotateY(0deg);
 }
 
-#front{
-    transition: 0.2s;
-    width: 150px;
-}
-
-#left{
-    bottom: -1px;
-    right: 70px;
-    transform: rotateY(85deg);
-    transition: 0.2s;
-    
-}
-
-#right{
-    bottom: -1px;
-    left: 65px;
-    transform: rotateY(85deg);
-    animation: open-right 1s ease infinite;
-    transition: 0.2s;
-    
-}
-
-#top{
-    width: 150px;
-    left: -5px;
-    transform: rotateX(87deg);
-    animation: open-top 1s ease infinite;
-    transition: 0.2s;
-    bottom: 25px;
+.box-1:hover > #face-1{
+    width: 0;
+    height: 0;
 }
 
 #bottom{
-    width: 175px;
-    transform: rotateY(40deg);
-    transition: 0.2s;
-    left: -22.5px;
-    animation: open-bottom 1s ease infinite;
-    bottom: 1px; 
-    z-index: 0.75;
+    height: 0;
+    width: 0;
+    transition: 0.5s;
 }
 
-#front:hover {
-    transform: rotateY(0);
+#top{
+    top: -30px;
+    transform: rotateY(-30deg) rotateX(77.5deg);
+    width: 120px;
+    transition: 0.5s;
 }
 
-#front:hover > #left {
-    transform: rotateY(0) translateX(-85px);
+#right{
+    left: 35px;
+    transform: rotateY(82.5deg) rotateZ(-5deg) translateY(-5px) ;
+    transition: 0.5s;
 }
 
-#front:hover > #right {
-    transform: rotateY(0) translateX(90px);
+#left{
+    left: -62.5px;
+    transform: rotateY(82.5deg) rotateZ(-5deg) translateY(-5px);
+    transition: 0.5s;
+    z-index: 1;
 }
 
-#front:hover > #bottom {
-    left: 0;
-    transform: rotateY(0) translateY(57.5px);
-    width: 150px;
+#front{
+    left: -5px;
+    width: 112.5px;
+    z-index: 1;
+    transform: rotateY(-25deg);
+    transition: 0.5s;
 }
 
-#front:hover > #top {
-    width: 150px;
-    left: -1px;
-    transform: rotateX(0) translateY(-27.5px);
+.box-2:hover > #front{
+    width: 125px;
+    left: 0%;
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+    z-index: 0;
+}
+
+.box-2:hover > #top{
+    width: 125px;
+    left: 0%;
+    top: -55px;
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+}
+
+.box-2:hover > #bottom{
+    height: 50px;
+    width: 125px;
+    left: 0%;
+    top: 55px;
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+}
+
+.box-2:hover > #left{
+    width: 125px;
+    left: -132.5px;
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+}
+
+.box-2:hover > #right{
+    width: 125px;
+    left: 132.5px;
+    transform: rotateX(0) rotateY(0) rotateZ(0);
 }
